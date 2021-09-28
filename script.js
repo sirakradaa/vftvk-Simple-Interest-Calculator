@@ -1,3 +1,4 @@
+//Calculate interest
 function compute() {
     var principal = document.getElementById("principal").value;
     var rate = document.getElementById('rate').value;
@@ -9,7 +10,17 @@ function compute() {
 
 }
 
+//Update rate slider value
 function updateRate() {
     var rateval = document.getElementById("rate").value;
     document.getElementById("rate_val").innerText = rateval;
+}
+
+function principalCheck() {
+    var principal = document.getElementById("principal").value;
+    var greaterThan = parseInt(principal) > 0;
+    if (!greaterThan) {
+        alert("Enter a positive number");
+        document.getElementById("principal").focus();
+    }
 }
